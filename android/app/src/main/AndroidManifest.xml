@@ -1,8 +1,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
     <application
         android:label="latresp"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        <!-- Required by Awesome Notifications -->
+        <receiver android:name="me.carda.awesome_notifications.notifications.receivers.ActionReceiver"
+                  android:exported="true" />
+
+        <receiver android:name="me.carda.awesome_notifications.notifications.receivers.DismissedReceiver"
+                  android:exported="true" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
